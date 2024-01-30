@@ -11,13 +11,33 @@ class LinkedList:
                 aktualny = aktualny.next
             aktualny.next = prvok
 
+
+
     def vypis(self):
+        if self.head is None:
+            print("Zoznam je praydnz")
+        else:
+            aktualny = self.head
+            print(aktualny.data)
+            while aktualny.next:
+                aktualny = aktualny.next
+                print(aktualny.data)
+
+    def obsahuje(self, meno):
         aktualny = self.head
-        print(aktualny.data)
+        if aktualny.data == meno:
+            return True
         while aktualny.next:
             aktualny = aktualny.next
-            print(aktualny.data)
+            if aktualny.data == meno:
+                return True
+        return False
 
+    # def vymenit(self, meno):
+    #     aktualny=self.head
+    #     while aktualny.next:
+    #         aktualny = aktualny.next
+    #         if aktu
 
 class Prvok:
     def __init__(self, data):
@@ -26,11 +46,13 @@ class Prvok:
 
 
 mojLinked = LinkedList()
-prvok1 = Prvok("Milan")
-mojLinked.vloz(prvok1)
-prvok2 = Prvok("Jozo")
-mojLinked.vloz(prvok2)
-prvok3 = Prvok("Fero")
-mojLinked.vloz(prvok3)
+# prvok1 = Prvok("Milan")
+# mojLinked.vloz(prvok1)
+# prvok2 = Prvok("Jozo")
+# mojLinked.vloz(prvok2)
+# prvok3 = Prvok("Fero")
+# mojLinked.vloz(prvok3)
 mojLinked.vypis()
 print("test")
+# print(mojLinked.obsahuje("Jozo"))
+# print(mojLinked.obsahuje("Milan"))
